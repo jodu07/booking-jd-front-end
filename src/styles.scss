@@ -12,3 +12,8 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+/// Import Tools from tools file
+/// Contains global styles for circles and typography
+/// This import needs to stay after the tailwind imports.
+@import "./scss/tools/index";
