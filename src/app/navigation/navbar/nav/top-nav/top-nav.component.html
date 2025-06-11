@@ -1,0 +1,32 @@
+<nav
+  class="bg-black z-[100] w-full fixed top-0 left-0 px-5 md:px-0 flex h-16 items-center"
+>
+  <span class="flex-grow md:flex-grow-0 flex justify-center text-white">
+    <img
+      src="logos/logo2.svg"
+      alt=""
+      width="300"
+      height="85"
+      class="w-12 mx-5"
+    />
+  </span>
+  <div class="flex w-full md:w-2/6 input-slim-mdc">
+    <mat-form-field
+      appearance="outline"
+      subscriptSizing="dynamic"
+      class="bg-white"
+    >
+      <span matPrefix>
+        <i class="fal fa-magnifying-glass text-gray-500"></i>
+      </span>
+      <input
+        id="input-search"
+        data-testid="input-search"
+        matInput
+        type="text"
+        placeholder="Booking JD"
+      />
+    </mat-form-field>
+  </div>
+  <span> </span>
+</nav>
