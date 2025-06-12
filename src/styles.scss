@@ -1,3 +1,4 @@
+@use "sass:meta";
 /* You can add global styles to this file, and also import other style files */
 
 @tailwind base;
@@ -12,3 +13,8 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+/// Import Tools from tools file
+/// Contains global styles for circles and typography
+/// This import needs to stay after the tailwind imports.
+@include meta.load-css("scss/tools/index");
