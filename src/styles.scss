@@ -1,3 +1,4 @@
+@use "sass:meta";
 /* You can add global styles to this file, and also import other style files */
 
 @tailwind base;
@@ -16,4 +17,4 @@ body {
 /// Import Tools from tools file
 /// Contains global styles for circles and typography
 /// This import needs to stay after the tailwind imports.
-@import "./scss/tools/index";
+@include meta.load-css("scss/tools/index");
