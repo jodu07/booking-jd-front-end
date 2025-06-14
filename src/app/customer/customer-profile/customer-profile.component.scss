@@ -1,0 +1,14 @@
+.menu-customer-services {
+  width: 245px;
+  height: 46px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem; /* un tono más intenso de rojo */
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+}
