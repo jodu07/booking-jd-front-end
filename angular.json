@@ -84,7 +84,7 @@
           "options": {
             "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
+            // "karmaConfig": "karma.conf.js",
             "codeCoverage": true,
             "inlineStyleLanguage": "scss",
             "assets": [
