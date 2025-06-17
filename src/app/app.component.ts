@@ -21,7 +21,7 @@ import { ReservationsComponent } from './reservations/reservations/reservations.
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'booking-jd-front-end';
+  title = 'Booking-jd-front-end';
   selectedMenu = '';
 
   onMenuSelected(menu: string) {

@@ -19,4 +19,13 @@ describe('CustomerProfileComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should emit menuSelected with the correct value', () => {
+    spyOn(component.menuSelected, 'emit');
+
+    const testValue = 'home';
+    component.onMenuClick(testValue);
+
+    expect(component.menuSelected.emit).toHaveBeenCalledWith(testValue);
+  });
 });

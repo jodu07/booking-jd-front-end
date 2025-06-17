@@ -14,16 +14,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'booking-jd-front-end' title`, () => {
+  it(`should have the 'Booking-jd-front-end' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('booking-jd-front-end');
+    expect(app.title).toEqual('Booking-jd-front-end');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, booking-jd-front-end');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Booking-jd-front-end'
+    );
   });
 });
