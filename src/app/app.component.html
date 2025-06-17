@@ -4,10 +4,15 @@
 
 <div class="w-full pt-24 pb-52 min-h-screen box-border flex">
   <div class="w-[500px] h-full">
-    <app-customer-profile />
+    <app-customer-profile (menuSelected)="onMenuSelected($event)" />
   </div>
 
-  <div class="flex-grow border-container"></div>
+  <div class="flex-grow border-container">
+    <ng-container [ngSwitch]="selectedMenu">
+      <app-reservations *ngSwitchCase="'booking'" />
+      <div *ngSwitchDefault>Selecciona una opción del menú.</div>
+    </ng-container>
+  </div>
 </div>
 
 <div>
