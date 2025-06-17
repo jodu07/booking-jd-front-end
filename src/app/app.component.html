@@ -7,7 +7,13 @@
     <app-customer-profile />
   </div>
 
-  <div class="flex-grow border-container"></div>
+  <div class="flex-grow border-container">
+    <ng-container [ngSwitch]="selectedMenu">
+      <app-profile-user *ngSwitchCase="'citas'"></app-profile-user>
+      <!-- ... otros componentes -->
+      <div *ngSwitchDefault>Selecciona una opción del menú.</div>
+    </ng-container>
+  </div>
 </div>
 
 <div>

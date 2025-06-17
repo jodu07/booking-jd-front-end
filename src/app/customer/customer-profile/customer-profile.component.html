@@ -15,8 +15,10 @@
         <p>837847843848</p>
       </div>
     </div>
-    <li class="menu-customer-services">Citas</li>
-    <li class="menu-customer-services">Tarjetas regalo</li>
+    <li class="menu-customer-services" (click)="onMenuClick('citas')">Citas</li>
+    <li class="menu-customer-services" (click)="onMenuClick('tarjetas')">
+      Tarjetas regalo
+    </li>
     <li class="menu-customer-services">Familia y amigos</li>
     <li class="menu-customer-services">Favoritos</li>
     <li class="menu-customer-services">Cuenta y configuración</li>
