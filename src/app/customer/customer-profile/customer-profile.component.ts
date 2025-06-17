@@ -12,6 +12,7 @@ export class CustomerProfileComponent {
   @Output() menuSelected = new EventEmitter<string>();
 
   onMenuClick(menu: string) {
+    console.log(menu);
     this.menuSelected.emit(menu);
   }
 }

@@ -22,10 +22,10 @@ import { ProfileUserComponent } from './user/profile-user/profile-user.component
 })
 export class AppComponent {
   title = 'booking-jd-front-end';
-  selectedMenu: string | null = null;
+  selectedMenu = '';
 
   onMenuSelected(menu: string) {
+    console.log('este menu:', menu);
     this.selectedMenu = menu;
-    console.log(this.selectedMenu);
   }
 }
