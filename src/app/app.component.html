@@ -10,7 +10,9 @@
   <div class="flex-grow border-container">
     <ng-container [ngSwitch]="selectedMenu">
       <app-reservations *ngSwitchCase="'booking'" />
-      <div *ngSwitchDefault>Selecciona una opción del menú.</div>
+      <div *ngSwitchDefault>
+        <h1>{{ title }}</h1>
+      </div>
     </ng-container>
   </div>
 </div>
