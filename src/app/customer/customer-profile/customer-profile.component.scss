@@ -1,12 +1,12 @@
 .menu-customer-services {
-  width: 100%;
-  height: 60px;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  width: 330px;
+  height: 66px;
+  //border-top: 1px solid black;
+  border-right: 0.5px solid #a24444;
+  border-bottom: 0.5px solid #db6363;
   display: flex;
   align-items: center;
-  font-size: 1.125rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transform: scale(1.02);
   transition: all 0.2s ease-in-out;
@@ -25,14 +25,14 @@
 .name-profile {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 330px;
   height: 200px;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  border-right: 0.5px solid #651717;
+  border-bottom: 0.5px solid #511111;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.125rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transform: scale(1.02);
   transition: all 0.2s ease-in-out;
