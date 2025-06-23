@@ -15,21 +15,10 @@
         <p>837847843848</p>
       </div>
     </div>
+    @for ( menu of menuService; track $index; let i = $index){
     <li class="menu-customer-services" (click)="onMenuClick('booking')">
-      Booking
+      {{ menu.name }}
     </li>
-    <li class="menu-customer-services" (click)="onMenuClick('tarjetas')">
-      Tarjetas regalo
-    </li>
-    <li class="menu-customer-services">Familia y amigos</li>
-    <li class="menu-customer-services">Favoritos</li>
-    <li class="menu-customer-services">Cuenta y configuración</li>
-    <li class="menu-customer-services">Reseñas</li>
-    <li class="menu-customer-services">Pagos</li>
-    <li class="menu-customer-services">Formularios personalizados</li>
-    <li class="menu-customer-services">Siguenos en Facebook</li>
-    <li class="menu-customer-services">Condiciones de uso</li>
-    <li class="menu-customer-services">Politica de privacidad</li>
-    <li class="menu-customer-services">Cerrar Sesión</li>
+    }
   </ul>
 </div>
