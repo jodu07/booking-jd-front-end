@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ServiceMenu } from '../../../models/service-menu';
 
 @Component({
   selector: 'app-customer-profile',
