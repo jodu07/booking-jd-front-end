@@ -1,12 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
-
-export interface ServiceMenu {
-  /** The name of service menu */
-  name: string;
-  /** The description of the element. */
-  description?: string;
-}
+import { ServiceMenu, ServiceMenuType } from 'src/models';
 
 @Component({
   selector: 'app-customer-profile',
@@ -23,17 +17,17 @@ export class CustomerProfileComponent {
   }
 
   menuService: ServiceMenu[] = [
-    { name: 'Booking' },
-    { name: 'Gift Cards' },
-    { name: 'Family & Friends' },
-    { name: 'Favorites' },
-    { name: 'Account & Settings' },
-    { name: 'Reviews' },
-    { name: 'Payments' },
-    { name: 'Custom Forms' },
-    { name: 'Follow us on Facebook' },
-    { name: 'Terms of Use' },
-    { name: 'Privacy Policy' },
-    { name: 'Logout' },
+    { name: ServiceMenuType.Booking },
+    { name: ServiceMenuType.GiftCards },
+    { name: ServiceMenuType.FamilyAndFriends },
+    { name: ServiceMenuType.Favorites },
+    { name: ServiceMenuType.AccountAndSettings },
+    { name: ServiceMenuType.Reviews },
+    { name: ServiceMenuType.Payments },
+    { name: ServiceMenuType.CustomForms },
+    { name: ServiceMenuType.FollowUsOnFacebook },
+    { name: ServiceMenuType.TermsOfUse },
+    { name: ServiceMenuType.PrivacyPolicy },
+    { name: ServiceMenuType.Logout },
   ];
 }

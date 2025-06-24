@@ -9,7 +9,8 @@
 
   <div class="flex-grow border-container">
     <ng-container [ngSwitch]="selectedMenu">
-      <app-reservations *ngSwitchCase="'booking'" />
+      <app-reservations *ngSwitchCase="'Booking'" />
+      <app-profile-user *ngSwitchCase="'Gift Cards'" />
       <div *ngSwitchDefault>
         <h1>{{ title }}</h1>
       </div>
