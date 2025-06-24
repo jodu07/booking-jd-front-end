@@ -16,7 +16,7 @@
       </div>
     </div>
     @for ( menu of menuService; track $index; let i = $index){
-    <li class="menu-customer-services" (click)="onMenuClick('booking')">
+    <li class="menu-customer-services" (click)="onMenuClick(menu.name)">
       {{ menu.name }}
     </li>
     }
