@@ -1,13 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 
-export interface ServiceMenu {
-  /** The name of service menu */
-  name: string;
-  /** The description of the element. */
-  description?: string;
-}
-
 @Component({
   selector: 'app-customer-profile',
   imports: [CommonModule],
