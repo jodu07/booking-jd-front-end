@@ -1,5 +1,4 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { CustomerService } from 'src/app/core/customer.service';
 import { Customer } from 'src/models/customer';
@@ -7,7 +6,7 @@ import { Customer } from 'src/models/customer';
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss',
 })
