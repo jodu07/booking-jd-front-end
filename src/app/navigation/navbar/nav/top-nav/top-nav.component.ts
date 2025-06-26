@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { Router } from '@angular/router';
 /**
  * Top-nav component.
  */
@@ -12,4 +13,9 @@ import { MatInputModule } from '@angular/material/input';
   templateUrl: './top-nav.component.html',
   styleUrl: './top-nav.component.scss',
 })
-export class TopNavComponent {}
+export class TopNavComponent {
+  constructor(private router: Router) {}
+  goToAdmin() {
+    this.router.navigate(['/admin']);
+  }
+}
