@@ -5,6 +5,7 @@ import { FooterComponent } from './navigation/navbar/nav/footer/footer.component
 import { CustomerProfileComponent } from './customer/customer-profile/customer-profile.component';
 import { ReservationsComponent } from './reservations/reservations/reservations.component';
 import { AdminComponent } from './admin/admin/admin.component';
+import { RouterModule, RouterOutlet } from '@angular/router';
 /**
  * Home component.
  */
@@ -18,6 +19,8 @@ import { AdminComponent } from './admin/admin/admin.component';
     CustomerProfileComponent,
     ReservationsComponent,
     AdminComponent,
+    RouterOutlet,
+    RouterModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
