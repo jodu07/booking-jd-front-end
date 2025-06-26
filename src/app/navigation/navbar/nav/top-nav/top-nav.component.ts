@@ -18,4 +18,8 @@ export class TopNavComponent {
   goToAdmin() {
     this.router.navigate(['/admin']);
   }
+
+  goToProfileUser() {
+    this.router.navigate(['/profile']);
+  }
 }

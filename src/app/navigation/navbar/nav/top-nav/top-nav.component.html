@@ -26,13 +26,11 @@
       id="perfil-button"
       data-testid="close-drawer-button"
       class="text-gray-100"
+      (click)="goToProfileUser()"
     >
       <i class="fa-regular fa-circle-user"></i>
       Profile
     </button>
-    <a [routerLink]="['/profile']" routerLinkActive="router-link-active"
-      >Perfil</a
-    >
     <button
       mat-icon-button
       type="button"
@@ -43,9 +41,6 @@
     >
       Admin
     </button>
-    <a [routerLink]="['/admin']" routerLinkActive="router-link-active"
-      >ADMIN2</a
-    >
   </div>
   <span> </span>
 </nav>
