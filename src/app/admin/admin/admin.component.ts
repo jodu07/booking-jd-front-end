@@ -18,7 +18,7 @@ export class AdminComponent {
   ngOnInit(): void {
     this.customerService.getAllCustomers().subscribe((data) => {
       this.customers = data;
-      console.log(this.customers);
+      console.log(data);
     });
   }
 }
