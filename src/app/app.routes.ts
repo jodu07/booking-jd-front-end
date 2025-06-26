@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { AdminComponent } from './admin/admin/admin.component';
-import { ProfileUserComponent } from './user/profile-user/profile-user.component';
+import { HomeComponent } from './home/home/home.component';
 
 export const routes: Routes = [
-  { path: '', component: ProfileUserComponent },
+  { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
 ];
