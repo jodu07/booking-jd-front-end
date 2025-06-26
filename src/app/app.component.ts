@@ -4,7 +4,6 @@ import { NavComponent } from './navigation/navbar/nav/nav.component';
 import { FooterComponent } from './navigation/navbar/nav/footer/footer.component';
 import { CustomerProfileComponent } from './customer/customer-profile/customer-profile.component';
 import { ReservationsComponent } from './reservations/reservations/reservations.component';
-import { ProfileUserComponent } from './user/profile-user/profile-user.component';
 import { AdminComponent } from './admin/admin/admin.component';
 /**
  * Home component.
@@ -18,7 +17,6 @@ import { AdminComponent } from './admin/admin/admin.component';
     FooterComponent,
     CustomerProfileComponent,
     ReservationsComponent,
-    ProfileUserComponent,
     AdminComponent,
   ],
   templateUrl: './app.component.html',
