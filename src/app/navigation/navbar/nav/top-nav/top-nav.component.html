@@ -12,23 +12,34 @@
   </span>
   <div class="flex items-center justify-center space-x-4">
     <mat-form-field class="flex justify-center">
-      <input matInput placeholder="Placeholder" />
+      <input matInput placeholder="Search" />
     </mat-form-field>
     <mat-form-field class="flex justify-center">
-      <input matInput placeholder="Placeholder" />
+      <input matInput placeholder="Search Customer" />
     </mat-form-field>
     <mat-form-field class="flex justify-center">
-      <input matInput placeholder="Placeholder" />
+      <input matInput placeholder="Search" />
     </mat-form-field>
     <button
       mat-icon-button
       type="button"
-      id="close-drawer-button"
+      id="perfil-button"
       data-testid="close-drawer-button"
       class="text-gray-100"
+      (click)="goToProfileUser()"
     >
       <i class="fa-regular fa-circle-user"></i>
-      Perfil
+      Profile
+    </button>
+    <button
+      mat-icon-button
+      type="button"
+      id="admin-button"
+      data-testid="close-drawer-button"
+      class="text-gray-100"
+      (click)="goToAdmin()"
+    >
+      Admin
     </button>
   </div>
   <span> </span>
