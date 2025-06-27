@@ -13,7 +13,6 @@ import { RouterModule, RouterOutlet } from '@angular/router';
     CommonModule,
     NavComponent,
     FooterComponent,
-
     RouterOutlet,
     RouterModule,
   ],

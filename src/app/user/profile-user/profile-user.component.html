@@ -1,13 +1,11 @@
-<div class="w-full pt-24 pb-52 min-h-screen box-border flex">
-  <div class="h-full">
-    <app-customer-profile (menuSelected)="onMenuSelected($event)" />
-  </div>
+<div class="h-full">
+  <app-customer-profile (menuSelected)="onMenuSelected($event)" />
+</div>
 
-  <div class="flex-grow border-container">
-    <ng-container [ngSwitch]="selectedMenu">
-      <app-reservations *ngSwitchCase="'Booking'" />
-      <app-admin *ngSwitchCase="'Gift Cards'" />
-      <div *ngSwitchDefault></div>
-    </ng-container>
-  </div>
+<div class="flex-grow border-container">
+  <ng-container [ngSwitch]="selectedMenu">
+    <app-reservations *ngSwitchCase="'Booking'" />
+    <app-admin *ngSwitchCase="'Gift Cards'" />
+    <div *ngSwitchDefault></div>
+  </ng-container>
 </div>
