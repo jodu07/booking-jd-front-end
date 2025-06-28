@@ -5,17 +5,29 @@ import { Customer } from 'src/models/customer';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
 import { MatButton } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { first } from 'rxjs';
+import { AddCustomerModalComponent } from '../add-customer-modal/add-customer-modal.component';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule, MatTableModule, RouterModule, MatButton],
+  imports: [
+    CommonModule,
+    MatTableModule,
+    RouterModule,
+    MatButton,
+    MatDialogModule,
+  ],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss',
 })
 export class AdminComponent {
+  /** Data list customers for table. */
   dataSource: Customer[] = [];
+  /** Cusomer Data */
   customersData: Customer[] = [];
+  /** Displayed Columns*/
   displayedColumns: string[] = [
     'id',
     'name',
@@ -25,12 +37,35 @@ export class AdminComponent {
     'bookings',
   ];
 
-  constructor(private customerService: CustomerService) {}
+  constructor(
+    private customerService: CustomerService,
+    private dialog: MatDialog
+  ) {}
 
+  /** initial method*/
   ngOnInit(): void {
     this.customerService.getAllCustomers().subscribe((data) => {
       this.customersData = data;
       this.dataSource = data;
     });
+  }
+
+  /** Open a modal add a Customer. */
+  openModalAddCustomer(): void {
+    this.dialog
+      .open(AddCustomerModalComponent, {
+        disableClose: true,
+        panelClass: ['w-11/12', 'md:w-4/6', 'lg:w-2/4', 'h-[90%]'],
+        maxWidth: '600px',
+        maxHeight: '900px',
+        data: {
+          //   nodeSelected: this.nodeSelected,
+          // members: this.teamData.members,
+          // teamRithmId: this.teamRithmId,
+        },
+      })
+      .afterClosed()
+      .pipe(first())
+      .subscribe();
   }
 }
