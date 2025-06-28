@@ -24,6 +24,8 @@ import { AddCustomerModalComponent } from '../add-customer-modal/add-customer-mo
 })
 export class AdminComponent {
   /** Data list customers for table. */
+  customer!: Customer;
+  /** Data list customers for table. */
   dataSource: Customer[] = [];
   /** Cusomer Data */
   customersData: Customer[] = [];
@@ -59,7 +61,7 @@ export class AdminComponent {
         maxWidth: '600px',
         maxHeight: '900px',
         data: {
-          //   nodeSelected: this.nodeSelected,
+          nodeSelected: this.customer,
           // members: this.teamData.members,
           // teamRithmId: this.teamRithmId,
         },
