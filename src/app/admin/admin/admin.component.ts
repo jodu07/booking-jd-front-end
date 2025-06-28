@@ -61,7 +61,7 @@ export class AdminComponent {
         maxWidth: '600px',
         maxHeight: '900px',
         data: {
-          nodeSelected: this.customer,
+          customerSelected: this.customer,
           // members: this.teamData.members,
           // teamRithmId: this.teamRithmId,
         },
