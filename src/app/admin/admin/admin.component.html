@@ -1,4 +1,8 @@
 <div class="mt-8 mr-8 ml-8">
+  <button matButton="filled" class="button-customer-register">
+    Customer Register
+  </button>
+
   <h1>List of Users</h1>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!--- Note that these columns can be defined in any order.
@@ -48,7 +52,3 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
 </div>
-
-<a routerLink="/profile"
-  ><i class="fa-solid fa-arrow-up-right-from-square"></i
-></a>

@@ -4,11 +4,12 @@ import { CustomerService } from 'src/app/core/customer.service';
 import { Customer } from 'src/models/customer';
 import { MatTableModule } from '@angular/material/table';
 import { RouterModule } from '@angular/router';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule, MatTableModule, RouterModule],
+  imports: [CommonModule, MatTableModule, RouterModule, MatButton],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.scss',
 })
