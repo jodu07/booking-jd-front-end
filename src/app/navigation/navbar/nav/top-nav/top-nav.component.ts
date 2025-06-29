@@ -22,4 +22,8 @@ export class TopNavComponent {
   goToProfileUser() {
     this.router.navigate(['/profile']);
   }
+
+  goToSignIn() {
+    this.router.navigate(['/sign']);
+  }
 }
