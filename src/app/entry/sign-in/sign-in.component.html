@@ -1,86 +1,27 @@
-<div class="page">
-  <mat-card>
-    <div class="grid grid-cols-1 md:grid-cols-2 md:h-full">
-      <!-- left column -->
-      <div class="bg-darkBlue md:flex md:flex-col p-3 flex-none md:rounded-l">
-        <div class="flex-grow">
-          <img
-            class="w-40"
-            ngSrc="assets/logo/white-icon-white-text.svg"
-            width="300"
-            height="85"
-            priority
-            alt="Rithm white icon logo"
-          />
-          <p class="mb-2 text-white hidden md:block">
-            Seamlessly connecting people and processes
-          </p>
-        </div>
-        <p class="mb-2 text-white hidden md:block">We make business easy.</p>
+<div class="mt-20 flex justify-center items-center">
+  <mat-card class="w-[600px] h-[800px]"
+    ><h1 class="text-center">LOGIN</h1>
+    <form [formGroup]="signForm" (ngSubmit)="submitForm()">
+      <div class="flex flex-col">
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" required />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" required />
+        </mat-form-field>
       </div>
-
-      <div class="flex flex-col bg-white md:rounded-r">
-        <span class="flex-grow">
-          <h4 class="mt-10 ml-5">Sign in</h4>
-          <p class="mt-1 ml-5">Welcome to Rithm.</p>
-          <p id="invalid" class="mat-error ml-5">Invalid email or password</p>
-
-          <form class="flex flex-col px-5 py-2 entry-form">
-            <mat-form-field appearance="outline">
-              <mat-label>Email</mat-label>
-              <input
-                data-testid="email-field"
-                id="email"
-                type="email"
-                matInput
-                placeholder="Email"
-                formControlName="email"
-                autocomplete="email"
-              />
-            </mat-form-field>
-            <mat-form-field appearance="outline" class="icon-password">
-              <mat-label>Password</mat-label>
-              <input
-                data-testid="password-field"
-                id="password"
-                matInput
-                placeholder="Password"
-                formControlName="password"
-                autocomplete="current-password"
-              />
-              <button mat-icon-button matSuffix type="button" class="mr-2">
-                <i class="fas fa-eye text-2xl"></i>
-              </button>
-            </mat-form-field>
-            <button
-              data-testid="sign-in"
-              id="sign-in"
-              class="w-full"
-              type="submit"
-              mat-raised-button
-              color="accent"
-              [disabled]="true"
-            >
-              Sign In
-            </button>
-          </form>
-          <a
-            id="forgot-password"
-            routerLink="forgot-password"
-            class="ml-5 text-accent-400"
-            >Forgot password?</a
-          >
-          <p class="text-center mt-5">
-            New here?
-            <a
-              class="text-accent-400"
-              id="create-account"
-              routerLink="account-create"
-              >Create an account</a
-            >
-          </p>
-        </span>
+      <div class="mt-4 flex justify-end gap-2">
+        <button
+          mat-button
+          color="primary"
+          type="submit"
+          [disabled]="signForm.invalid"
+        >
+          Save
+        </button>
       </div>
-    </div>
+    </form>
   </mat-card>
 </div>
