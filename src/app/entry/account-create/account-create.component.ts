@@ -25,12 +25,14 @@ import { MatInput } from '@angular/material/input';
   styleUrl: './account-create.component.scss',
 })
 export class AccountCreateComponent {
-  signForm!: FormGroup;
+  accountCreateForm!: FormGroup;
   constructor(private fb: FormBuilder) {}
 
   /** Initial method. */
   ngOnInit(): void {
-    this.signForm = this.fb.group({
+    this.accountCreateForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
