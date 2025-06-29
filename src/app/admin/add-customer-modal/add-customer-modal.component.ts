@@ -53,7 +53,7 @@ export class AddCustomerModalComponent {
     });
   }
 
-  /** Envía el formulario */
+  /** Send form. */
   submitForm(): void {
     if (this.customerForm.valid) {
       const newCustomer: Customer = {
@@ -62,7 +62,7 @@ export class AddCustomerModalComponent {
       };
       this.customerService.createCustomer(newCustomer).subscribe((response) => {
         console.log('Cliente creado:', response);
-        this.dialogRef.close(response); // Cierra el modal y devuelve el cliente
+        this.dialogRef.close(response);
       });
     }
   }
