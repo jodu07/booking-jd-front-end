@@ -7,14 +7,24 @@ import {
   Validators,
 } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { MatFormField, MatLabel } from '@angular/material/input';
+import {
+  MatFormField,
+  MatInputModule,
+  MatLabel,
+} from '@angular/material/input';
 import { CustomerService } from 'src/app/core/customer.service';
 import { Customer } from 'src/models/customer';
 
 @Component({
   selector: 'app-add-customer-modal',
   standalone: true,
-  imports: [CommonModule, MatFormField, MatLabel, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    MatFormField,
+    MatLabel,
+    ReactiveFormsModule,
+    MatInputModule,
+  ],
   templateUrl: './add-customer-modal.component.html',
   styleUrl: './add-customer-modal.component.scss',
 })
