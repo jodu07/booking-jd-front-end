@@ -62,8 +62,6 @@ export class AdminComponent {
         maxHeight: '900px',
         data: {
           customerSelected: this.customer,
-          // members: this.teamData.members,
-          // teamRithmId: this.teamRithmId,
         },
       })
       .afterClosed()
