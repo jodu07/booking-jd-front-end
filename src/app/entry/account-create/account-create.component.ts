@@ -9,6 +9,8 @@ import {
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
+import { CustomerService } from 'src/app/core/customer.service';
+import { Customer } from 'src/models/customer';
 
 @Component({
   selector: 'app-account-create',
@@ -26,7 +28,10 @@ import { MatInput } from '@angular/material/input';
 })
 export class AccountCreateComponent {
   accountCreateForm!: FormGroup;
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private customerService: CustomerService
+  ) {}
 
   /** Initial method. */
   ngOnInit(): void {
@@ -40,6 +45,14 @@ export class AccountCreateComponent {
 
   /** Send form. */
   submitForm(): void {
-    console.log('hola');
+    if (this.accountCreateForm.valid) {
+      const newCustomer: Customer = {
+        ...this.accountCreateForm.value,
+        bookings: [],
+      };
+      this.customerService.createCustomer(newCustomer).subscribe((response) => {
+        console.log('Cliente creado:', response);
+      });
+    }
   }
 }
