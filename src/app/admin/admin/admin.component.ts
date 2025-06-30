@@ -53,7 +53,7 @@ export class AdminComponent {
   }
 
   /** Open a modal add a Customer. */
-  openModalAddCustomer(): void {
+  openCustomerModal(): void {
     this.dialog
       .open(AddCustomerModalComponent, {
         disableClose: true,
