@@ -56,13 +56,18 @@ export class AddCustomerModalComponent {
   /** Send form. */
   submitForm(): void {
     if (this.customerForm.valid) {
-      const newCustomer: Customer = {
+      const customerData: Customer = {
+        ...this.matData, // conserva el ID si lo trae
         ...this.customerForm.value,
-        bookings: [],
+        bookings: this.matData.bookings ?? [],
       };
-      this.customerService.createCustomer(newCustomer).subscribe((response) => {
-        console.log('Cliente creado:', response);
-        this.dialogRef.close(response);
+
+      const request = customerData.id
+        ? this.customerService.updateCustomer(customerData)
+        : this.customerService.createCustomer(customerData);
+
+      request.subscribe((response) => {
+        this.dialogRef.close(response); // Devuelve el cliente al componente padre
       });
     }
   }

@@ -54,25 +54,35 @@ export class AdminComponent {
   }
 
   /** Open a modal add a Customer. */
-  openCustomerModal(): void {
+  openCustomerModal(customer?: Customer): void {
     this.dialog
       .open(AddCustomerModalComponent, {
         disableClose: true,
         panelClass: ['w-11/12', 'md:w-4/6', 'lg:w-2/4', 'h-[90%]'],
         maxWidth: '600px',
         maxHeight: '900px',
-        data: {
-          customerSelected: this.customer,
+        data: customer ?? {
+          name: '',
+          email: '',
+          username: '',
+          password: '',
+          bookings: [],
         },
       })
       .afterClosed()
       .pipe(first())
-      .subscribe((newCustomer: Customer | undefined) => {
-        if (newCustomer) {
+      .subscribe((updatedCustomer: Customer | undefined) => {
+        if (updatedCustomer) {
           this.customerService.getAllCustomers().subscribe((data) => {
             this.dataSource = data;
           });
         }
       });
+  }
+
+  removeCustomer(id: string): void {
+    this.customerService.deleteCustomer(id).subscribe(() => {
+      this.dataSource = this.dataSource.filter((c) => c.id !== id);
+    });
   }
 }
