@@ -67,12 +67,11 @@ export class AdminComponent {
       .afterClosed()
       .pipe(first())
       .subscribe((newCustomer: Customer | undefined) => {
-        this.dataSource = newCustomer
-          ? [...this.dataSource, newCustomer]
-          : (this.dataSource = this.dataSource);
-        /*   if (newCustomer) {
-          this.dataSource = [...this.dataSource, newCustomer];
-        }*/
+        if (newCustomer) {
+          this.customerService.getAllCustomers().subscribe((data) => {
+            this.dataSource = data;
+          });
+        }
       });
   }
 }
