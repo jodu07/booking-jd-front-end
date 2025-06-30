@@ -42,13 +42,24 @@
       <td mat-cell *matCellDef="let element">{{ element.password }}</td>
     </ng-container>
 
-    <!-- Symbol Column -->
+    <!-- Reservations Column -->
     <ng-container matColumnDef="bookings">
       <th mat-header-cell *matHeaderCellDef>Bookings</th>
       <td mat-cell *matCellDef="let element">
         <a routerLink="/profile"
           ><i class="fa-solid fa-arrow-up-right-from-square"></i
         ></a>
+      </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <div class="flex space-x-2">
+          <button mat-icon-button>Edit</button>
+          <button>Remove</button>
+        </div>
       </td>
     </ng-container>
 

@@ -37,6 +37,7 @@ export class AdminComponent {
     'username',
     'password',
     'bookings',
+    'actions',
   ];
 
   constructor(
