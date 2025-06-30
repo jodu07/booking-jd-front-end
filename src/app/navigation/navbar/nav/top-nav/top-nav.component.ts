@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { Router, RouterModule } from '@angular/router';
+import { RuleType } from '../../../../../../../../Users/USUARIO/Desktop/proyecto/rithm-front-end/src/models/enums/rule-type.enum';
 /**
  * Top-nav component.
  */
@@ -15,11 +16,8 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class TopNavComponent {
   constructor(private router: Router) {}
-  goToAdmin() {
-    this.router.navigate(['/admin']);
-  }
 
-  goToProfileUser() {
-    this.router.navigate(['/profile']);
+  goToPage(rute: string) {
+    this.router.navigate([rute]);
   }
 }
