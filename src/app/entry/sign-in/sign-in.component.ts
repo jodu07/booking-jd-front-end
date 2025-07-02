@@ -11,7 +11,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatInput } from '@angular/material/input';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/core/auth.service';
 import { CustomerService } from 'src/app/core/customer.service';
+import { Customer } from 'src/models/customer';
 
 @Component({
   selector: 'app-sign-in',
@@ -30,10 +32,12 @@ import { CustomerService } from 'src/app/core/customer.service';
 })
 export class SignInComponent {
   signForm!: FormGroup;
+
   constructor(
     private fb: FormBuilder,
     private customerService: CustomerService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
 
   /** Initial method. */
@@ -51,6 +55,7 @@ export class SignInComponent {
       this.customerService.login(username, password).subscribe({
         next: (customer) => {
           console.log('Login exitoso:', customer);
+          this.authService.setCustomer(customer);
           // Puedes guardar info en localStorage si deseas
           this.router.navigate(['/profile']); // navega al panel admin
         },

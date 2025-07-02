@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { Router, RouterModule } from '@angular/router';
-import { RuleType } from '../../../../../../../../Users/USUARIO/Desktop/proyecto/rithm-front-end/src/models/enums/rule-type.enum';
+import { AuthService } from 'src/app/core/auth.service';
+import { Customer } from 'src/models/customer';
+
 /**
  * Top-nav component.
  */
@@ -15,7 +17,15 @@ import { RuleType } from '../../../../../../../../Users/USUARIO/Desktop/proyecto
   styleUrl: './top-nav.component.scss',
 })
 export class TopNavComponent {
-  constructor(private router: Router) {}
+  loggedCustomer!: Customer | null;
+
+  constructor(private router: Router, private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authService.getCustomerObservable().subscribe((customer) => {
+      this.loggedCustomer = customer;
+    });
+  }
 
   goToPage(rute: string) {
     this.router.navigate([rute]);

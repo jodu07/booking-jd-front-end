@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavComponent } from './navigation/navbar/nav/nav.component';
 import { FooterComponent } from './navigation/navbar/nav/footer/footer.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
+import { AuthService } from './core/auth.service';
 /**
  * Home component.
  */
@@ -21,4 +22,10 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'Booking-jd-front-end';
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.authService.loadCustomerFromStorage();
+  }
 }
