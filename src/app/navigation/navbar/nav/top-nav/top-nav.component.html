@@ -23,6 +23,7 @@
     </mat-form-field>
   </div>
   <div class="justify-end space-x-4 text-gray-100">
+    @if (!loggedCustomer) {
     <button
       mat-icon-button
       type="button"
@@ -33,6 +34,18 @@
     >
       Sign In
     </button>
+    } @else {
+    <button
+      mat-icon-button
+      type="button"
+      id="admin-button"
+      data-testid="close-drawer-button"
+      class=""
+      (click)="logout()"
+    >
+      Logout
+    </button>
+    }
     <button
       mat-icon-button
       type="button"

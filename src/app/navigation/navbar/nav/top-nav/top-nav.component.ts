@@ -18,16 +18,26 @@ import { Customer } from 'src/models/customer';
 })
 export class TopNavComponent {
   loggedCustomer!: Customer | null;
+  loggedUser = false;
 
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.authService.getCustomerObservable().subscribe((customer) => {
       this.loggedCustomer = customer;
+      if (customer) {
+        this.loggedCustomer = customer;
+        this.loggedUser = true;
+      }
     });
   }
 
   goToPage(rute: string) {
     this.router.navigate([rute]);
+  }
+
+  logout() {
+    this.authService.logout();
+    this.loggedUser = false;
   }
 }
