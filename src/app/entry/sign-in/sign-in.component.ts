@@ -52,7 +52,7 @@ export class SignInComponent {
         next: (customer) => {
           console.log('Login exitoso:', customer);
           // Puedes guardar info en localStorage si deseas
-          this.router.navigate(['/admin']); // navega al panel admin
+          this.router.navigate(['/profile']); // navega al panel admin
         },
         error: () => {
           console.error('Credenciales inválidas');
