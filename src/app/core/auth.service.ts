@@ -24,9 +24,11 @@ export class AuthService {
   }
 
   loadCustomerFromStorage(): void {
-    const customerJson = localStorage.getItem('loggedCustomer');
-    if (customerJson) {
-      this.customerSubject.next(JSON.parse(customerJson));
+    if (typeof window !== 'undefined' && localStorage) {
+      const customerJson = localStorage.getItem('loggedCustomer');
+      if (customerJson) {
+        this.customerSubject.next(JSON.parse(customerJson));
+      }
     }
   }
 
