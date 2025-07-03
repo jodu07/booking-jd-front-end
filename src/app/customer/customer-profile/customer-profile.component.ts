@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
+import { AuthService } from 'src/app/core/auth.service';
 import { ServiceMenu, ServiceMenuType } from 'src/models';
 
 @Component({
@@ -12,8 +13,14 @@ import { ServiceMenu, ServiceMenuType } from 'src/models';
 export class CustomerProfileComponent {
   @Output() menuSelected = new EventEmitter<string>();
 
+  constructor(private authService: AuthService) {}
+
   onMenuClick(menu: string) {
+    console.log(menu);
     this.menuSelected.emit(menu);
+    if (menu === ServiceMenuType.Logout) {
+      this.authService.logout();
+    }
   }
 
   menuService: ServiceMenu[] = [
