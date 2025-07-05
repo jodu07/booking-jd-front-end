@@ -22,6 +22,7 @@ export class TopNavComponent {
 
   constructor(private router: Router, private authService: AuthService) {}
 
+  /** Initial method.*/
   ngOnInit(): void {
     this.authService.getCustomerObservable().subscribe((customer) => {
       this.loggedCustomer = customer;
