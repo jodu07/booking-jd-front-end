@@ -17,7 +17,9 @@ import { Customer } from 'src/models/customer';
   styleUrl: './top-nav.component.scss',
 })
 export class TopNavComponent {
+  /** Customer logged.*/
   loggedCustomer!: Customer | null;
+  /** User Logged.*/
   loggedUser = false;
 
   constructor(private router: Router, private authService: AuthService) {}
