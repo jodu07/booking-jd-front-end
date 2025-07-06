@@ -22,7 +22,8 @@
       <input matInput placeholder="Search" />
     </mat-form-field>
   </div>
-  <div class="justify-end space-x-4 text-gray-100">
+  <div class="flex justify-end space-x-4 text-gray-100">
+    <p class="">{{ loggedCustomer?.username }}</p>
     @if (!loggedCustomer) {
     <button
       mat-icon-button
@@ -34,18 +35,6 @@
     >
       Sign In
     </button>
-    } @else {
-    <button
-      mat-icon-button
-      type="button"
-      id="admin-button"
-      data-testid="close-drawer-button"
-      class=""
-      (click)="logout()"
-    >
-      Logout
-    </button>
-    }
     <button
       mat-icon-button
       type="button"
@@ -56,6 +45,7 @@
     >
       Account Create
     </button>
+    }
     <button
       mat-icon-button
       type="button"
@@ -77,7 +67,18 @@
     >
       Admin
     </button>
-    <p class="">{{ loggedCustomer?.username }}</p>
+    @if (loggedCustomer) {
+    <button
+      mat-icon-button
+      type="button"
+      id="admin-button"
+      data-testid="close-drawer-button"
+      class=""
+      (click)="logout()"
+    >
+      Logout
+    </button>
+    }
   </div>
   <span> </span>
 </nav>
