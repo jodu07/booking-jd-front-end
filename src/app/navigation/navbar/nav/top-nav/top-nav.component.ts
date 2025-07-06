@@ -35,10 +35,17 @@ export class TopNavComponent {
     });
   }
 
+  /**
+   * Go to page selected.
+   * @param rute The rute.
+   */
   goToPage(rute: string) {
     this.router.navigate([rute]);
   }
 
+  /**
+   * Logout.
+   */
   logout() {
     this.authService.logout();
     this.loggedUser = false;
