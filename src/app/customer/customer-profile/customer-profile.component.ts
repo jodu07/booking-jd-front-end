@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 import { AuthService } from 'src/app/core/auth.service';
 import { ServiceMenu, ServiceMenuType } from 'src/models';
+import { Customer } from 'src/models/customer';
 
 @Component({
   selector: 'app-customer-profile',
@@ -11,6 +12,8 @@ import { ServiceMenu, ServiceMenuType } from 'src/models';
   styleUrl: './customer-profile.component.scss',
 })
 export class CustomerProfileComponent {
+  @Input({ required: true }) customerCurrent!: Customer;
+
   @Output() menuSelected = new EventEmitter<string>();
 
   constructor(private authService: AuthService) {}

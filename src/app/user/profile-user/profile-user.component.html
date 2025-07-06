@@ -1,6 +1,9 @@
 <div class="flex">
   <div class="h-full">
-    <app-customer-profile (menuSelected)="onMenuSelected($event)" />
+    <app-customer-profile
+      [customerCurrent]="loggedCustomer"
+      (menuSelected)="onMenuSelected($event)"
+    />
   </div>
 
   <div class="border-container w-full">
