@@ -15,6 +15,7 @@ export class CustomerProfileComponent {
 
   constructor(private authService: AuthService) {}
 
+  /** On menu Click. */
   onMenuClick(menu: string) {
     console.log(menu);
     this.menuSelected.emit(menu);
@@ -23,7 +24,8 @@ export class CustomerProfileComponent {
     }
   }
 
-  menuService: ServiceMenu[] = [
+  /** Menu items. */
+  menuItems: ServiceMenu[] = [
     { name: ServiceMenuType.Booking },
     { name: ServiceMenuType.GiftCards },
     { name: ServiceMenuType.FamilyAndFriends },
