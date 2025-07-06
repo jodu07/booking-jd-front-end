@@ -15,7 +15,7 @@
         <p>837847843848</p>
       </div>
     </div>
-    @for ( menu of menuService; track $index; let i = $index){
+    @for ( menu of menuItems; track $index; let i = $index){
     <li class="menu-customer-services" (click)="onMenuClick(menu.name)">
       {{ menu.name }}
     </li>
