@@ -80,6 +80,7 @@ export class AdminComponent {
       });
   }
 
+  /** Remove Customer. */
   removeCustomer(id: string): void {
     this.customerService.deleteCustomer(id).subscribe(() => {
       this.dataSource = this.dataSource.filter((c) => c.id !== id);
