@@ -9,6 +9,9 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { first } from 'rxjs';
 import { AddCustomerModalComponent } from '../add-customer-modal/add-customer-modal.component';
 
+/**
+ * Admin component.
+ */
 @Component({
   selector: 'app-admin',
   standalone: true,
