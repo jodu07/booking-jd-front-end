@@ -13,8 +13,10 @@ import { MatInput } from '@angular/material/input';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 import { CustomerService } from 'src/app/core/customer.service';
-import { Customer } from 'src/models/customer';
 
+/**
+ * Sign component.
+ */
 @Component({
   selector: 'app-sign-in',
   standalone: true,
@@ -56,12 +58,10 @@ export class SignInComponent {
         next: (customer) => {
           console.log('Login exitoso:', customer);
           this.authService.setCustomer(customer);
-          // Puedes guardar info en localStorage si deseas
-          this.router.navigate(['/profile']); // navega al panel admin
+          this.router.navigate(['/profile']);
         },
         error: () => {
           console.error('Credenciales inválidas');
-          // Aquí podrías mostrar un mensaje visual más adelante
         },
       });
     }
