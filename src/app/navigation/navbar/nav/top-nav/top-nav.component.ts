@@ -49,5 +49,6 @@ export class TopNavComponent {
   logout() {
     this.authService.logout();
     this.loggedUser = false;
+    this.router.navigate(['/sign']);
   }
 }
