@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 import { ServiceMenu, ServiceMenuType } from 'src/models';
 import { Customer } from 'src/models/customer';
@@ -19,7 +20,7 @@ export class CustomerProfileComponent {
 
   @Output() menuSelected = new EventEmitter<string>();
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   /** On menu Click. */
   onMenuClick(menu: string) {
@@ -27,6 +28,7 @@ export class CustomerProfileComponent {
     this.menuSelected.emit(menu);
     if (menu === ServiceMenuType.Logout) {
       this.authService.logout();
+      this.router.navigate(['/sign']);
     }
   }
 
