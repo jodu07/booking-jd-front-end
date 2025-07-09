@@ -11,11 +11,13 @@
         </svg>
       </div>
       <div class="user-details mt-2">
-        <h4><b>JHONNATAN DUSSAN CUELLAR</b></h4>
+        <h4>
+          <b>{{ customerCurrent.name | uppercase }} </b>
+        </h4>
         <p>837847843848</p>
       </div>
     </div>
-    @for ( menu of menuService; track $index; let i = $index){
+    @for ( menu of menuItems; track $index; let i = $index){
     <li class="menu-customer-services" (click)="onMenuClick(menu.name)">
       {{ menu.name }}
     </li>

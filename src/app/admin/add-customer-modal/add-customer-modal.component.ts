@@ -72,6 +72,7 @@ export class AddCustomerModalComponent {
     }
   }
 
+  /** Send form. */
   cancel(): void {
     this.dialogRef.close();
   }

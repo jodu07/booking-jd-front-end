@@ -1,7 +1,7 @@
 <div class="mt-20 flex justify-center items-center">
   <mat-card class="w-[600px] h-[800px]"
     ><h1 class="text-center">LOGIN</h1>
-    <form [formGroup]="signForm" (ngSubmit)="submitForm()">
+    <form [formGroup]="signForm" (ngSubmit)="login()">
       <div class="flex flex-col">
         <mat-form-field>
           <mat-label>Username</mat-label>
@@ -11,15 +11,14 @@
           <mat-label>Password</mat-label>
           <input matInput formControlName="password" type="password" required />
         </mat-form-field>
-      </div>
-      <div class="mt-4 flex justify-end gap-2">
         <button
-          mat-button
-          color="primary"
+          data-testid="sign-in"
+          id="sign-in"
+          class="w-full"
           type="submit"
-          [disabled]="signForm.invalid"
+          matButton="filled"
         >
-          Save
+          Sign In
         </button>
       </div>
     </form>
