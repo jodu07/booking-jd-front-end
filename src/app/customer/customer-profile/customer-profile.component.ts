@@ -4,6 +4,9 @@ import { AuthService } from 'src/app/core/auth.service';
 import { ServiceMenu, ServiceMenuType } from 'src/models';
 import { Customer } from 'src/models/customer';
 
+/**
+ * Customer Profile component.
+ */
 @Component({
   selector: 'app-customer-profile',
   imports: [CommonModule],
