@@ -19,17 +19,24 @@ import { Customer } from 'src/models/customer';
   styleUrl: './profile-user.component.scss',
 })
 export class ProfileUserComponent {
+  /** Logged Customer. */
   loggedCustomer!: Customer;
+  /** Selected Menu. */
   selectedMenu = '';
 
   constructor(private authService: AuthService) {}
 
+  /** Initial method. */
   ngOnInit(): void {
     this.authService.getCustomerObservable().subscribe((customer) => {
       if (customer) this.loggedCustomer = customer;
     });
   }
 
+  /**
+   * On menu selected.
+   * @param menu The menu selected.
+   */
   onMenuSelected(menu: string) {
     this.selectedMenu = menu;
   }
