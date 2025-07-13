@@ -50,6 +50,7 @@ export class SignInComponent {
     });
   }
 
+  /** Login method. */
   login(): void {
     if (this.signForm.valid) {
       const { username, password } = this.signForm.value;
