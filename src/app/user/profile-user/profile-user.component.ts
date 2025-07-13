@@ -5,7 +5,9 @@ import { AuthService } from 'src/app/core/auth.service';
 import { CustomerProfileComponent } from 'src/app/customer/customer-profile/customer-profile.component';
 import { ReservationsComponent } from 'src/app/reservations/reservations/reservations.component';
 import { Customer } from 'src/models/customer';
-
+/**
+ * Customer Profilecomponent.
+ */
 @Component({
   selector: 'app-profile-user',
   standalone: true,
