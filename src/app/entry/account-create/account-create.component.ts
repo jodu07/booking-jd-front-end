@@ -13,6 +13,9 @@ import { MatInput } from '@angular/material/input';
 import { Router } from '@angular/router';
 import { CustomerService } from 'src/app/core/customer.service';
 import { Customer } from 'src/models/customer';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { TypeUser } from 'src/models/enums/type-user.enum';
 
 @Component({
   selector: 'app-account-create',
@@ -25,11 +28,14 @@ import { Customer } from 'src/models/customer';
     ReactiveFormsModule,
     MatInput,
     MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   templateUrl: './account-create.component.html',
   styleUrl: './account-create.component.scss',
 })
 export class AccountCreateComponent {
+  typeUser = TypeUser;
   accountCreateForm!: FormGroup;
   constructor(
     private fb: FormBuilder,

@@ -20,8 +20,11 @@
           <input matInput formControlName="password" type="password" required />
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Type User</mat-label>
-          <input matInput formControlName="typeUser" type="typeUser" required />
+          <mat-label>Select User type</mat-label>
+          <mat-select formControlName="typeUser" required>
+            <mat-option [value]="typeUser.Admin">Admin</mat-option>
+            <mat-option [value]="typeUser.Client">Client</mat-option>
+          </mat-select>
         </mat-form-field>
         <button
           data-testid="account-create"
