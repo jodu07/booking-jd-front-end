@@ -40,6 +40,7 @@ export class AccountCreateComponent {
       email: ['', [Validators.required, Validators.email]],
       username: ['', Validators.required],
       password: ['', Validators.required],
+      typeUser: ['', Validators.required],
     });
   }
 
