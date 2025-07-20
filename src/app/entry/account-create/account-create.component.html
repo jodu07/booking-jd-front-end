@@ -23,15 +23,15 @@
           <mat-label>Type User</mat-label>
           <input matInput formControlName="typeUser" type="typeUser" required />
         </mat-form-field>
-      </div>
-      <div class="mt-4 flex justify-end gap-2">
         <button
-          mat-button
-          color="primary"
+          data-testid="account-create"
+          id="account-create"
+          class="w-full"
           type="submit"
+          matButton="filled"
           [disabled]="accountCreateForm.invalid"
         >
-          Save
+          ACCOUNT CREATE
         </button>
       </div>
     </form>
