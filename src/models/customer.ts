@@ -14,4 +14,6 @@ export interface Customer {
   password: string;
   /** The bookings of customer */
   bookings: string[];
+  /** The type of user */
+  typeUser: string;
 }
