@@ -19,15 +19,23 @@
           <mat-label>Password</mat-label>
           <input matInput formControlName="password" type="password" required />
         </mat-form-field>
-      </div>
-      <div class="mt-4 flex justify-end gap-2">
+        <mat-form-field>
+          <mat-label>Select User type</mat-label>
+          <mat-select formControlName="typeUser" required>
+            <mat-option [value]="typeUser.Admin">Admin</mat-option>
+            <mat-option [value]="typeUser.Client">Client</mat-option>
+          </mat-select>
+        </mat-form-field>
         <button
-          mat-button
-          color="primary"
+          data-testid="account-create"
+          id="account-create"
+          class="w-full"
           type="submit"
+          matButton="filled"
           [disabled]="accountCreateForm.invalid"
+          (click)="onAccountCreate()"
         >
-          Save
+          ACCOUNT CREATE
         </button>
       </div>
     </form>

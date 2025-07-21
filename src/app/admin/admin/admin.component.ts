@@ -39,6 +39,7 @@ export class AdminComponent {
     'email',
     'username',
     'password',
+    'typeUser',
     'bookings',
     'actions',
   ];
@@ -69,6 +70,7 @@ export class AdminComponent {
           email: '',
           username: '',
           password: '',
+          typeUser: '',
           bookings: [],
         },
       })

@@ -57,6 +57,7 @@
       <i class="fa-regular fa-circle-user"></i>
       Profile
     </button>
+    @if (loggedCustomer?.typeUser === typeUser.Admin) {
     <button
       mat-icon-button
       type="button"
@@ -67,7 +68,7 @@
     >
       Admin
     </button>
-    @if (loggedCustomer) {
+    } @if (loggedCustomer) {
     <button
       mat-icon-button
       type="button"

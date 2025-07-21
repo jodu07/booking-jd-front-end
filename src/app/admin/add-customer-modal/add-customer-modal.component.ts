@@ -14,6 +14,8 @@ import {
 } from '@angular/material/input';
 import { CustomerService } from 'src/app/core/customer.service';
 import { Customer } from 'src/models/customer';
+import { MatSelectModule } from '@angular/material/select';
+import { TypeUser } from 'src/models/enums/type-user.enum';
 
 @Component({
   selector: 'app-add-customer-modal',
@@ -24,11 +26,13 @@ import { Customer } from 'src/models/customer';
     MatLabel,
     ReactiveFormsModule,
     MatInputModule,
+    MatSelectModule,
   ],
   templateUrl: './add-customer-modal.component.html',
   styleUrl: './add-customer-modal.component.scss',
 })
 export class AddCustomerModalComponent {
+  typeUser = TypeUser;
   customerSelected!: Customer;
   customerForm!: FormGroup;
   constructor(
@@ -50,6 +54,7 @@ export class AddCustomerModalComponent {
       ],
       username: [this.matData?.username || '', Validators.required],
       password: [this.matData?.password || '', Validators.required],
+      typeUser: [this.matData?.typeUser || '', Validators.required],
     });
   }
 

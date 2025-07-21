@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 import { Customer } from 'src/models/customer';
+import { TypeUser } from 'src/models/enums/type-user.enum';
 
 /**
  * Top-nav component.
@@ -17,6 +18,7 @@ import { Customer } from 'src/models/customer';
   styleUrl: './top-nav.component.scss',
 })
 export class TopNavComponent {
+  typeUser = TypeUser;
   /** Customer logged.*/
   loggedCustomer!: Customer | null;
   /** User Logged.*/

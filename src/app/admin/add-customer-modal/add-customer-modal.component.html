@@ -23,6 +23,14 @@
           <mat-label>Password</mat-label>
           <input matInput formControlName="password" type="password" required />
         </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Select User type</mat-label>
+          <mat-select formControlName="typeUser" required>
+            <mat-option [value]="typeUser.Admin">Admin</mat-option>
+            <mat-option [value]="typeUser.Client">Client</mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
 
       <div class="mt-4 flex justify-end gap-2">
